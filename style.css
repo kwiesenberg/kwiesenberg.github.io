@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f3e7a6;
+  font-family: serif;
+}
+
+.page {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff8dc;
+  border: 2px solid #c9b27c;
+  padding: 16px;
+}
