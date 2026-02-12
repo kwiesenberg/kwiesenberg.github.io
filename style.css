@@ -67,14 +67,14 @@ body {
 
 .intro {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 16px;
   margin-bottom: 24px;
   align-items: start;
 }
 
 .intro-image img {
-  max-width: 100%;
+  width: 100%;
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 4px;
