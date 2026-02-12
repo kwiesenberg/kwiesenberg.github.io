@@ -12,3 +12,35 @@ body {
   border: 2px solid #c9b27c;
   padding: 16px;
 }
+.layout {
+  display: flex;
+  gap: 16px;
+}
+
+.sidebar {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  border: 1px solid #c9b27c;
+  background: #fff1b8;
+  padding: 6px;
+  color: #333;
+}
+
+.content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.box {
+  border: 1px solid #c9b27c;
+  background: #fffdf0;
+  padding: 10px;
+}
