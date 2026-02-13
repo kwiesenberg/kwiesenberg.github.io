@@ -1,58 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Blog</title>
-<link rel="stylesheet" href="/style.css">
+  <meta charset="utf-8">
+  <title>Blog</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
 
 <div class="page">
 
- <h1 class="site-title">Kieran Wiesenberg</h1>
+  <h1 class="site-title">Kieran Wiesenberg</h1>
 
-    <nav class="top-nav">
-      <a href="/about/">About</a>
-      <a href="/blog/">Blog</a>
-      <a href="/books/">Books</a>
-      <a href="/videos/">Videos</a>
-      <a href="/contact/">Contact</a>
-    </nav>
+  <nav class="top-nav">
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/books/">Books</a>
+    <a href="/videos/">Videos</a>
+    <a href="/contact/">Contact</a>
+  </nav>
 
-<div class="layout-blog">
+  <div class="layout-blog">
 
-<main class="content">
+    <!-- LEFT COLUMN -->
+    <main class="blog-main">
 
-  <div id="post-grid" class="post-grid"></div>
+      <div id="post-grid" class="post-grid"></div>
 
-  <div class="pagination">
-    <button id="prev-page">← Newer</button>
-    <span id="page-info"></span>
-    <button id="next-page">Older →</button>
+      <div class="pagination">
+        <button id="prev-page">← Newer</button>
+        <span id="page-info"></span>
+        <button id="next-page">Older →</button>
+      </div>
+
+    </main>
+
+    <!-- RIGHT COLUMN -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <input id="search-input" type="search" placeholder="Search posts…">
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Selected posts</h3>
+        <ul id="featured-list"></ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Archive</h3>
+        <div id="archive"></div>
+      </div>
+
+    </aside>
+
   </div>
-
-</main>
-
-<aside class="sidebar">
-
-  <div class="sidebar-section">
-    <input id="search-input" type="search" placeholder="Search posts…">
-  </div>
-
-  <div class="sidebar-section">
-    <h3>Selected posts</h3>
-    <ul id="featured-list"></ul>
-  </div>
-
-  <div class="sidebar-section">
-    <h3>Archive</h3>
-    <div id="archive"></div>
-  </div>
-
-</aside>
-
-</div>
 </div>
 
 <script src="blog.js"></script>
