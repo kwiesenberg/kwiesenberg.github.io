@@ -1,83 +1,80 @@
-const POSTS_PER_PAGE = 9;
-
 let allPosts = [];
 let filteredPosts = [];
 let currentPage = 1;
+const postsPerPage = 6;
 
 const grid = document.getElementById("post-grid");
-const pageInfo = document.getElementById("page-info");
 const prevBtn = document.getElementById("prev-page");
 const nextBtn = document.getElementById("next-page");
-const searchInput = document.getElementById("search-input");
+const pageInfo = document.getElementById("page-info");
 
-fetch("posts.json")
-  .then(r => r.json())
-  .then(posts => {
-    allPosts = posts.sort((a, b) => b.date.localeCompare(a.date));
-    filteredPosts = allPosts;
-    buildFeatured();
-    buildArchive();
+const searchInput = document.getElementById("search-input");
+const featuredList = document.getElementById("featured-list");
+const archiveContainer = document.getElementById("archive");
+
+fetch("/blog/posts.json")
+  .then(res => res.json())
+  .then(data => {
+    allPosts = data.sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+    filteredPosts = [...allPosts];
+
+    renderFeatured();
+    renderArchive();
     render();
   });
-
-function formatDate(str) {
-  const [year, month] = str.split("-");
-  const date = new Date(year, month - 1);
-  return date.toLocaleString("en-US", { month: "long", year: "numeric" });
-}
 
 function render() {
   grid.innerHTML = "";
 
-  const start = (currentPage - 1) * POSTS_PER_PAGE;
-  const pagePosts = filteredPosts.slice(start, start + POSTS_PER_PAGE);
+  const start = (currentPage - 1) * postsPerPage;
+  const pagePosts = filteredPosts.slice(start, start + postsPerPage);
 
-  for (const post of pagePosts) {
-    const card = document.createElement("a");
-    card.href = post.url;
+  pagePosts.forEach(post => {
+    const card = document.createElement("article");
     card.className = "post-card";
 
     card.innerHTML = `
-      <div class="post-thumb">
+      <a href="/blog/posts/${post.slug}/">
         <img src="${post.image}" alt="">
-      </div>
-      <h3>${post.title}</h3>
-      <div class="post-date">${formatDate(post.date)}</div>
+        <h3>${post.title}</h3>
+      </a>
+      <div class="post-meta">${formatDate(post.date)}</div>
       <p>${post.excerpt}</p>
     `;
 
     grid.appendChild(card);
-  }
+  });
 
-  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredPosts.length / postsPerPage)
+  );
 
-  pageInfo.textContent = `${currentPage} / ${totalPages}`;
+  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+
   prevBtn.disabled = currentPage === 1;
   nextBtn.disabled = currentPage === totalPages;
-
-  if (searchInput.value.trim() !== "") {
-    prevBtn.style.display = "none";
-    nextBtn.style.display = "none";
-    pageInfo.style.display = "none";
-  } else {
-    prevBtn.style.display = "";
-    nextBtn.style.display = "";
-    pageInfo.style.display = "";
-  }
 }
 
-prevBtn.onclick = () => {
-  currentPage--;
-  render();
-};
+prevBtn.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    render();
+  }
+});
 
-nextBtn.onclick = () => {
-  currentPage++;
-  render();
-};
+nextBtn.addEventListener("click", () => {
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    render();
+  }
+});
 
-searchInput.addEventListener("input", () => {
-  const q = searchInput.value.toLowerCase();
+searchInput.addEventListener("input", e => {
+  const q = e.target.value.toLowerCase().trim();
 
   filteredPosts = allPosts.filter(p =>
     p.title.toLowerCase().includes(q) ||
@@ -88,54 +85,85 @@ searchInput.addEventListener("input", () => {
   render();
 });
 
-function buildFeatured() {
-  const list = document.getElementById("featured-list");
+function renderFeatured() {
+  featuredList.innerHTML = "";
 
   allPosts
     .filter(p => p.featured)
-    .forEach(p => {
+    .forEach(post => {
       const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = p.url;
-      a.textContent = p.title;
-      li.appendChild(a);
-      list.appendChild(li);
+      li.innerHTML = `
+        <a href="/blog/posts/${post.slug}/">
+          ${post.title}
+        </a>
+      `;
+      featuredList.appendChild(li);
     });
 }
 
-function buildArchive() {
-  const container = document.getElementById("archive");
+function renderArchive() {
+  archiveContainer.innerHTML = "";
 
   const groups = {};
 
-  for (const post of allPosts) {
-    const [year, month] = post.date.split("-");
-    if (!groups[year]) groups[year] = [];
-    groups[year].push(post);
-  }
+  allPosts.forEach(post => {
+    const d = new Date(post.date);
+    const key = `${d.getFullYear()}-${d.getMonth()}`;
 
-  Object.keys(groups)
-    .sort((a, b) => b - a)
-    .forEach(year => {
-      const details = document.createElement("details");
+    if (!groups[key]) {
+      groups[key] = {
+        year: d.getFullYear(),
+        month: d.getMonth(),
+        posts: []
+      };
+    }
 
-      const summary = document.createElement("summary");
-      summary.textContent = `${year} (${groups[year].length})`;
+    groups[key].posts.push(post);
+  });
 
-      details.appendChild(summary);
+  const sortedGroups = Object.values(groups).sort((a, b) => {
+    const da = new Date(a.year, a.month);
+    const db = new Date(b.year, b.month);
+    return db - da;
+  });
 
-      const ul = document.createElement("ul");
+  sortedGroups.forEach(group => {
+    const section = document.createElement("div");
+    section.className = "archive-group";
 
-      groups[year].forEach(p => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = p.url;
-        a.textContent = p.title;
-        li.appendChild(a);
-        ul.appendChild(li);
-      });
+    const heading = document.createElement("h4");
+    heading.textContent =
+      `${monthName(group.month)} ${group.year}`;
 
-      details.appendChild(ul);
-      container.appendChild(details);
+    section.appendChild(heading);
+
+    const ul = document.createElement("ul");
+
+    group.posts.forEach(post => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <a href="/blog/posts/${post.slug}/">
+          ${post.title}
+        </a>
+      `;
+      ul.appendChild(li);
     });
+
+    section.appendChild(ul);
+    archiveContainer.appendChild(section);
+  });
+}
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long"
+  });
+}
+
+function monthName(i) {
+  return new Date(2000, i).toLocaleString(undefined, {
+    month: "long"
+  });
 }
