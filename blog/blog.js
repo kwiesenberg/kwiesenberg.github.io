@@ -58,17 +58,6 @@ document.getElementById("next-page").onclick = () => {
   }
 };
 
-document.getElementById("search-input").addEventListener("input", e => {
-  const q = e.target.value.toLowerCase();
-
-  filteredPosts = allPosts.filter(p =>
-    p.title.toLowerCase().includes(q)
-  );
-
-  currentPage = 1;
-  render();
-});
-
 function buildFeatured() {
   const ul = document.getElementById("featured-list");
   ul.innerHTML = "";
