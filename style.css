@@ -187,3 +187,18 @@ body {
 .pagination {
   margin-top: 20px;
 }
+
+/* Blog post page layout fixes */
+
+.layout-blog .content {
+  display: block;
+  max-width: none;
+}
+
+.blog-post {
+  max-width: 640px;
+}
+
+.layout-blog {
+  grid-template-columns: 1fr 240px;
+}
