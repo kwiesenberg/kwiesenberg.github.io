@@ -1,18 +1,18 @@
 [
   {
+    "slug": "walk-through-the-marsh",
     "title": "A Walk Through the Marsh",
-    "date": "2026-02",
+    "date": "2026-02-01",
     "excerpt": "A quiet afternoon walk and some thoughts about winter ending.",
     "image": "/blog/images/marsh.jpg",
-    "url": "/blog/2026-02-walk-through-the-marsh/",
     "featured": true
   },
   {
+    "slug": "learning-html-the-hard-way",
     "title": "Learning HTML the Hard Way",
-    "date": "2025-11",
+    "date": "2025-11-01",
     "excerpt": "Notes from building my own site from scratch with GitHub Pages.",
     "image": "/blog/images/html.jpg",
-    "url": "/blog/2025-11-learning-html/",
     "featured": false
   }
 ]
