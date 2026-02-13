@@ -6,13 +6,5 @@
     "excerpt": "Happy New Year. I hope this to be the beginning of a long-running monthly blog.",
     "image": "/blog/images/lethalcompany.jpg",
     "featured": true
-  },
-  {
-    "slug": "learning-html-the-hard-way",
-    "title": "Learning HTML the Hard Way",
-    "date": "2025-11-01",
-    "excerpt": "Notes from building my own site from scratch with GitHub Pages.",
-    "image": "/blog/images/html.jpg",
-    "featured": false
   }
 ]
