@@ -155,3 +155,9 @@ body {
 .pagination {
   margin-top: 20px;
 }
+.post-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
