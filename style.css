@@ -202,3 +202,23 @@ body {
 .layout-blog {
   grid-template-columns: 1fr 240px;
 }
+
+.blog-post figure {
+  margin: 24px 0;
+  text-align: center;
+}
+
+.blog-post figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #c9b27c;
+  background: #fffdf0;
+  padding: 4px;
+}
+
+.blog-post figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
