@@ -14,14 +14,6 @@ fetch("/blog/posts.json")
     buildArchive();
   });
 
-function formatMonthYear(dateStr) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("en-US", {
-    month: "long",
-    year: "numeric"
-  });
-}
-
 function render() {
   const grid = document.getElementById("post-grid");
   grid.innerHTML = "";
@@ -37,8 +29,6 @@ function render() {
     card.innerHTML = `
       <img src="${post.image}" alt="">
       <h3>${post.title}</h3>
-      <div class="date">${formatMonthYear(post.date)}</div>
-      <p>${post.excerpt}</p>
     `;
 
     grid.appendChild(card);
@@ -72,8 +62,7 @@ document.getElementById("search-input").addEventListener("input", e => {
   const q = e.target.value.toLowerCase();
 
   filteredPosts = allPosts.filter(p =>
-    p.title.toLowerCase().includes(q) ||
-    p.excerpt.toLowerCase().includes(q)
+    p.title.toLowerCase().includes(q)
   );
 
   currentPage = 1;
