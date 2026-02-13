@@ -118,6 +118,11 @@ body {
   gap: 24px;
 }
 
+.post-date {
+  font-style: italic;
+  color: #777;
+}
+
 .post-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
