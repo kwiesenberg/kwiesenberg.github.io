@@ -16,6 +16,7 @@ fetch("/blog/posts.json")
 
 function render() {
   const grid = document.getElementById("post-grid");
+  if (!grid) return;
   grid.innerHTML = "";
 
   const start = (currentPage - 1) * POSTS_PER_PAGE;
