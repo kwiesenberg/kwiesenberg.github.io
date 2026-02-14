@@ -17,30 +17,11 @@ body {
   padding: 16px;
 }
 
+/* ---------- global layout ---------- */
+
 .layout {
   display: flex;
   gap: 16px;
-}
-
-.sidebar {
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-size: 0.9rem;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #333;
-  padding: 0;
-  border: none;
-  background: none;
-  line-height: 1.4;
-}
-
-.sidebar a:hover {
-  text-decoration: underline;
 }
 
 .content {
@@ -50,11 +31,7 @@ body {
   gap: 12px;
 }
 
-.box {
-  border: 1px solid #c9b27c;
-  background: #fffdf0;
-  padding: 10px;
-}
+/* ---------- header ---------- */
 
 .site-title {
   font-size: 2.5rem;
@@ -86,19 +63,22 @@ body {
   background: #ffed9c;
 }
 
-.intro {
+/* ---------- homepage shared grid ---------- */
+
+.home-grid {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   align-items: start;
 }
 
-.intro-image img {
+.home-image img {
   width: 100%;
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 4px;
+  display: block;
 }
 
 .intro-text {
@@ -106,6 +86,53 @@ body {
   background: #fffdf0;
   padding: 10px;
 }
+
+/* ---------- books box ---------- */
+
+.books-box {
+  border: 1px solid #c9b27c;
+  background: #fffdf0;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.books-box:hover {
+  background: #fff6d6;
+}
+
+.books-box h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.book-covers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+.book-covers img {
+  width: 100%;
+  max-width: 90px;
+  height: auto;
+  display: block;
+}
+
+/* ---------- latest post box (homepage) ---------- */
+
+.latest-post-box {
+  border: 1px solid #c9b27c;
+  background: #fffdf0;
+  padding: 10px;
+}
+
+.latest-post-box h2 {
+  margin-top: 0;
+}
+
+/* ---------- updates box (homepage) ---------- */
 
 .updates {
   border: 1px solid #c9b27c;
@@ -117,9 +144,58 @@ body {
   padding-left: 20px;
 }
 
+/* ---------- sidebar (blog pages) ---------- */
+
+.sidebar {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 0.9rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  padding: 0;
+  border: none;
+  background: none;
+  line-height: 1.4;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section ul {
+  margin: 6px 0 0 0;
+  padding-left: 14px;
+}
+
+.sidebar input[type="search"] {
+  width: 100%;
+  padding: 6px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.sidebar details {
+  margin-bottom: 8px;
+}
+
+.sidebar summary {
+  cursor: pointer;
+}
+
+/* ---------- blog list pages ---------- */
+
 .layout-blog {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 240px;
   gap: 24px;
 }
 
@@ -165,35 +241,13 @@ body {
   text-align: center;
 }
 
-.sidebar-section {
-  margin-bottom: 20px;
-}
-
-.sidebar-section ul {
-  margin: 6px 0 0 0;
-  padding-left: 14px;
-}
-
-.sidebar input[type="search"] {
-  width: 100%;
-  padding: 6px;
-  font-size: 0.9rem;
-  box-sizing: border-box;
-}
-
-.sidebar details {
-  margin-bottom: 8px;
-}
-
-.sidebar summary {
-  cursor: pointer;
-}
+/* ---------- pagination ---------- */
 
 .pagination {
   margin-top: 20px;
 }
 
-/* Blog post page layout fixes */
+/* ---------- blog post page ---------- */
 
 .layout-blog .content {
   display: block;
@@ -202,10 +256,6 @@ body {
 
 .blog-post {
   max-width: 640px;
-}
-
-.layout-blog {
-  grid-template-columns: 1fr 240px;
 }
 
 .blog-post figure {
@@ -226,44 +276,4 @@ body {
   font-size: 0.85rem;
   color: #666;
   font-style: italic;
-}
-
-.books-row {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  margin-bottom: 24px;
-}
-
-.books-box {
-  border: 1px solid #c9b27c;
-  background: #fffdf0;
-  padding: 10px;
-
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-.books-box h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.books-box:hover {
-  background: #fff6d6;
-}
-
-.book-covers {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  justify-items: center;
-}
-
-.book-covers img {
-  width: 100%;
-  max-width: 90px;
-  height: auto;
-  display: block;
 }
