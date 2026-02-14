@@ -259,3 +259,17 @@ body {
 .books-box {
   cursor: pointer;
 }
+
+.book-covers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+.book-covers img {
+  width: 100%;
+  max-width: 90px;
+  height: auto;
+  display: block;
+}
