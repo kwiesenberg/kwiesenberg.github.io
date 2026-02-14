@@ -227,3 +227,35 @@ body {
   color: #666;
   font-style: italic;
 }
+
+.books-box {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.books-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.books-box:hover {
+  background: #fff6d6;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.books-grid img {
+  width: 100%;
+  display: block;
+  border: 1px solid #c9b27c;
+}
+
+.books-box {
+  cursor: pointer;
+}
