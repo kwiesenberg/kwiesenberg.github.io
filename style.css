@@ -228,36 +228,31 @@ body {
   font-style: italic;
 }
 
+.books-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
 .books-box {
+  border: 1px solid #c9b27c;
+  background: #fffdf0;
+  padding: 10px;
+
   display: block;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
-.books-box h3 {
+.books-box h2 {
   margin-top: 0;
   margin-bottom: 10px;
-  text-align: center;
 }
 
 .books-box:hover {
   background: #fff6d6;
-}
-
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.books-grid img {
-  width: 100%;
-  display: block;
-  border: 1px solid #c9b27c;
-}
-
-.books-box {
-  cursor: pointer;
 }
 
 .book-covers {
