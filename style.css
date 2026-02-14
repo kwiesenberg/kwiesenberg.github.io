@@ -120,16 +120,48 @@ body {
   display: block;
 }
 
-/* ---------- latest post box (homepage) ---------- */
+/* ---------- latest post (homepage) ---------- */
 
-.latest-post-box {
+.latest-post-wrapper {
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 10px;
 }
 
-.latest-post-box h2 {
+.latest-post-wrapper h2 {
   margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* clickable card itself */
+
+.latest-post-box {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* do NOT force the homepage card into a square */
+
+.latest-post-box.post-card {
+  aspect-ratio: auto;
+}
+
+/* homepage latest post image */
+
+.latest-post-box img {
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.latest-excerpt {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 /* ---------- updates box (homepage) ---------- */
