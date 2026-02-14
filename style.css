@@ -63,7 +63,7 @@ body {
   background: #ffed9c;
 }
 
-/* ---------- homepage shared grid ---------- */
+/* ---------- homepage layout ---------- */
 
 .home-grid {
   display: grid;
@@ -73,13 +73,24 @@ body {
   align-items: start;
 }
 
+.home-left,
+.home-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- homepage image ---------- */
+
 .home-image img {
   width: 100%;
+  display: block;
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 4px;
-  display: block;
 }
+
+/* ---------- intro ---------- */
 
 .intro-text {
   border: 1px solid #c9b27c;
@@ -104,6 +115,12 @@ body {
 .books-box h2 {
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+.books-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .book-covers {
@@ -133,8 +150,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* clickable card itself */
-
 .latest-post-box {
   padding: 8px;
   display: flex;
@@ -144,18 +159,16 @@ body {
   color: inherit;
 }
 
-/* do NOT force the homepage card into a square */
-
 .latest-post-box.post-card {
   aspect-ratio: auto;
 }
 
-/* homepage latest post image */
-
 .latest-post-box img {
+  width: 100%;
   height: auto;
   max-height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 .latest-excerpt {
@@ -212,7 +225,6 @@ body {
   width: 100%;
   padding: 6px;
   font-size: 0.9rem;
-  box-sizing: border-box;
 }
 
 .sidebar details {
