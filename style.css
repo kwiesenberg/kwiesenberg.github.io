@@ -95,7 +95,17 @@ body {
 .intro-text {
   border: 1px solid #c9b27c;
   background: #fffdf0;
-  padding: 10px;
+  padding: 8px;
+}
+
+.intro-text h4 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.intro-text p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* ---------- books box ---------- */
