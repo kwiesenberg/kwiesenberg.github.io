@@ -177,6 +177,14 @@ body {
   line-height: 1.4;
 }
 
+.read-more {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+}
+
 /* ---------- updates box (homepage) ---------- */
 
 .updates {
