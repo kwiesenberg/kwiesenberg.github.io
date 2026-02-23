@@ -454,3 +454,10 @@ body {
 .btn.secondary:hover {
   background: #fff6d6;
 }
+
+.book-year {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
