@@ -523,3 +523,15 @@ body {
   font-style: italic;
   text-align: center;
 }
+
+.video-embed {
+  display: none;
+}
+
+.video-card[open] .video-embed {
+  display: block;
+}
+
+.video-card[open] summary img {
+  display: none;
+}
