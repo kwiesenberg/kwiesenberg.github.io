@@ -238,26 +238,76 @@ body {
   padding: 10px;
 }
 
-.updates ul {
-  padding-left: 20px;
+/* title */
+
+.updates-title {
+  margin: 0 0 8px 0;
 }
 
-/* hide older updates by default */
-.older-update {
-  display: none;
+/* list reset */
+
+.updates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-#load-more-updates {
+/* one update = one item */
+
+.update-item {
+  padding: 6px 0;
+  border-bottom: 1px solid #e4d7a6;
+}
+
+.update-item:last-child {
+  border-bottom: none;
+}
+
+/* bold title */
+
+.update-title {
+  font-weight: bold;
+}
+
+.update-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.update-title a:hover {
+  text-decoration: underline;
+}
+
+/* subtitle / byline */
+
+.update-subtitle {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-top: 2px;
+  color: #333;
+}
+
+/* date */
+
+.update-date {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* link to full updates page */
+
+.updates-archive-link {
+  display: inline-block;
   margin-top: 8px;
-  padding: 6px 10px;
-  border: 1px solid #c9b27c;
-  background: #fff1b8;
-  cursor: pointer;
-  font-family: inherit;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #555;
 }
 
-#load-more-updates:hover {
-  background: #ffed9c;
+.updates-archive-link:hover {
+  text-decoration: underline;
 }
 
 /* ---------- sidebar (blog pages) ---------- */
