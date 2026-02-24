@@ -457,6 +457,10 @@ body {
 
 /* ---------- videos page ---------- */
 
+main h2 {
+  text-align: center;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -496,14 +500,13 @@ body {
   margin-top: 10px;
 }
 
-/* embed box keeps a 16:9 ratio */
+/* 16:9 video box */
 .video-embed {
   position: relative;
   padding-top: 56.25%;
   margin-bottom: 8px;
 }
 
-/* iframe fills the ratio box */
 .video-embed iframe {
   position: absolute;
   inset: 0;
@@ -526,7 +529,7 @@ body {
   text-align: center;
 }
 
-/* ---------- click-to-replace behavior ---------- */
+/* ---------- thumbnail → video swap ---------- */
 
 .video-embed {
   display: none;
@@ -536,12 +539,10 @@ body {
   display: block;
 }
 
-/* hide the thumbnail once opened */
 .video-card[open] summary img {
   display: none;
 }
 
-/* remove the extra top gap when opened */
 .video-card[open] .video-panel {
   margin-top: 0;
 }
