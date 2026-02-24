@@ -242,6 +242,24 @@ body {
   padding-left: 20px;
 }
 
+/* hide older updates by default */
+.older-update {
+  display: none;
+}
+
+#load-more-updates {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: 1px solid #c9b27c;
+  background: #fff1b8;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#load-more-updates:hover {
+  background: #ffed9c;
+}
+
 /* ---------- sidebar (blog pages) ---------- */
 
 .sidebar {
