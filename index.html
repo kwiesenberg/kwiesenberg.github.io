@@ -112,29 +112,72 @@
 
   </section>
 
-
   <section class="updates">
 
-    <h2>Recent updates</h2>
+  <h2>Recent updates</h2>
 
-    <ul>
-      <li>
-        <strong>February 2026 –</strong>
-        <a href="/blog/">New blog post: Title goes here</a>
-      </li>
-      <li>
-        <strong>January 2026 –</strong>
-        <a href="/blog/">Monthly blog</a>
-      </li>
-      <li>
-        <strong>Announcement –</strong>
-        Launched the new site!
-      </li>
-    </ul>
+  <ul id="updates-list">
+    <li>
+      <strong>February 2026 –</strong>
+      <a href="/blog/">New blog post: Title goes here</a>
+    </li>
 
-  </section>
+    <li>
+      <strong>January 2026 –</strong>
+      <a href="/blog/">Monthly blog</a>
+    </li>
+
+    <li>
+      <strong>Announcement –</strong>
+      Launched the new site!
+    </li>
+
+    <!-- older updates -->
+    <li class="older-update">
+      <strong>December 2025 –</strong>
+      Something older here
+    </li>
+
+    <li class="older-update">
+      <strong>November 2025 –</strong>
+      Something older here
+    </li>
+
+    <li class="older-update">
+      <strong>October 2025 –</strong>
+      Something older here
+    </li>
+  </ul>
+
+  <button id="load-more-updates" type="button">
+    View older updates
+  </button>
+
+</section>
 
 </div>
 
+<script>
+  const updates = document.querySelectorAll('.older-update');
+  const button = document.getElementById('load-more-updates');
+
+  let shown = 0;
+  const batchSize = 10;
+
+  function showMore() {
+    for (let i = shown; i < shown + batchSize && i < updates.length; i++) {
+      updates[i].style.display = 'list-item';
+    }
+
+    shown += batchSize;
+
+    if (shown >= updates.length) {
+      button.style.display = 'none';
+    }
+  }
+
+  button.addEventListener('click', showMore);
+</script>
+  
 </body>
 </html>
