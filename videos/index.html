@@ -2,29 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Videos</title>
+  <title>Videos – Kieran Wiesenberg</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
 <div class="page">
 
-  <header class="header">
-    <h1>Videos</h1>
+  <header class="site-header">
+
+    <h1 class="site-title">
+      <a href="/">Kieran Wiesenberg</a>
+    </h1>
+
+    <nav class="top-nav">
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/books/">Books</a>
+      <a href="/music/"Music</a>
+      <a href="/videos/">Videos</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+
   </header>
 
-  <nav class="nav">
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <a href="/books/">Books</a>
-    <a href="/videos/">Videos</a>
-    <a href="/contact/">Contact</a>
-  </nav>
 
-  <main class="content">
-    <section class="box">
-      <p>Your video archive will go here.</p>
+  <main>
+
+    <h2>Videos</h2>
+
+    <section class="video-grid">
+
+      <!-- video card -->
+      <details class="video-card">
+
+        <summary>
+          <img src="https://img.youtube.com/vi/aCsFfivFInk/hqdefault.jpg"
+               alt="Video thumbnail">
+
+          <h3>Doc Ock Cosplay at ITHACON 45</h3>
+
+          <div class="video-date">April 2022</div>
+          
+        </summary>
+
+        <div class="video-panel">
+
+          <div class="video-embed">
+            <iframe
+              src="https://img.youtube.com/vi/aCsFfivFInk/hqdefault.jpg"
+              title="YouTube video player"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <p class="video-description">
+            While showcasing his Doc Ock cosplay, Kieran has an encounter with three web-heads.
+            Originally recorded April 2022 in Ithaca, NY at ITHACON 45.
+          </p>
+
+        </div>
+
+      </details>
+
+      <!-- repeat for each video -->
+
+
     </section>
+
   </main>
 
 </div>
