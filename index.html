@@ -114,70 +114,53 @@
 
   <section class="updates">
 
-  <h2>Recent updates</h2>
+  <h2 class="updates-title">Recent updates</h2>
 
-  <ul id="updates-list">
-    <li>
-      <strong>February 2026 –</strong>
-      <a href="/blog/">New blog post: Title goes here</a>
+  <ul class="updates-list">
+
+    <li class="update-item">
+      <div class="update-title">
+        <a href="/blog/">New blog post</a>
+      </div>
+      <div class="update-subtitle">
+        A new monthly blog entry about starting fresh and planning future projects.
+      </div>
+      <div class="update-date">
+        February 2026
+      </div>
     </li>
 
-    <li>
-      <strong>January 2026 –</strong>
-      <a href="/blog/">Monthly blog</a>
+    <li class="update-item">
+      <div class="update-title">
+        <a href="/blog/">Monthly blog published</a>
+      </div>
+      <div class="update-subtitle">
+        January blog reflecting on creative goals and learning progress.
+      </div>
+      <div class="update-date">
+        January 2026
+      </div>
     </li>
 
-    <li>
-      <strong>Announcement –</strong>
-      Launched the new site!
+    <li class="update-item">
+      <div class="update-title">
+        Site launch
+      </div>
+      <div class="update-subtitle">
+        The new personal website is officially live.
+      </div>
+      <div class="update-date">
+        January 2026
+      </div>
     </li>
 
-    <!-- older updates -->
-    <li class="older-update">
-      <strong>December 2025 –</strong>
-      Something older here
-    </li>
-
-    <li class="older-update">
-      <strong>November 2025 –</strong>
-      Something older here
-    </li>
-
-    <li class="older-update">
-      <strong>October 2025 –</strong>
-      Something older here
-    </li>
   </ul>
 
-  <button id="load-more-updates" type="button">
-    View older updates
-  </button>
+  <a class="updates-archive-link" href="/updates/">
+    View older updates →
+  </a>
 
 </section>
-
-</div>
-
-<script>
-  const updates = document.querySelectorAll('.older-update');
-  const button = document.getElementById('load-more-updates');
-
-  let shown = 0;
-  const batchSize = 10;
-
-  function showMore() {
-    for (let i = shown; i < shown + batchSize && i < updates.length; i++) {
-      updates[i].style.display = 'list-item';
-    }
-
-    shown += batchSize;
-
-    if (shown >= updates.length) {
-      button.style.display = 'none';
-    }
-  }
-
-  button.addEventListener('click', showMore);
-</script>
   
 </body>
 </html>
