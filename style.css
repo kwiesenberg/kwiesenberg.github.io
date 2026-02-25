@@ -252,12 +252,12 @@ body {
   margin: 0;
 }
 
-/* one update row */
+/* one update = one item */
 
 .update-item {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
   padding: 6px 0;
   border-bottom: 1px solid #e4d7a6;
 }
@@ -274,15 +274,22 @@ body {
   object-fit: cover;
   border: 1px solid #c9b27c;
   background: #fff;
-  flex-shrink: 0;
 }
 
-/* text column */
+/* clickable thumbnail wrapper */
 
-.update-content {
+.update-thumb-link {
+  display: inline-flex;
+  line-height: 0;
+}
+
+/* header row (title + date) */
+
+.update-header {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 /* bold title */
@@ -300,11 +307,13 @@ body {
   text-decoration: underline;
 }
 
-/* subtitle */
+/* subtitle / byline */
 
 .update-subtitle {
+  grid-column: 2;
   font-size: 0.9rem;
   line-height: 1.4;
+  margin-top: 2px;
   color: #333;
 }
 
@@ -314,6 +323,13 @@ body {
   font-size: 0.8rem;
   font-style: italic;
   color: #777;
+  white-space: nowrap;
+}
+
+/* make header align in grid */
+
+.update-header {
+  grid-column: 2;
 }
 
 /* link to full updates page (homepage only) */
