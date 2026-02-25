@@ -28,48 +28,47 @@
 
   <main>
 
-    <section class="updates updates-page">
+    <section class="updates">
 
-      <h2>Updates</h2>
+      <h2 class="updates-title">Updates</h2>
 
       <ul class="updates-list">
 
-        <!-- Newest at the top -->
+        <!-- newest updates go at the top -->
 
         <li class="update-item">
-          <div class="update-title">New blog post</div>
+          <div class="update-title">
+            <a href="/blog/january-2026/">New blog post</a>
+          </div>
           <div class="update-subtitle">
-            I published a new monthly blog entry about starting fresh.
+            Posted a new monthly blog entry about creative goals for 2026.
           </div>
           <div class="update-date">February 2026</div>
         </li>
 
         <li class="update-item">
-          <div class="update-title">Site update</div>
+          <div class="update-title">Music page launched</div>
           <div class="update-subtitle">
-            Added a dedicated music page with embedded tracks.
+            Added a new page for sharing my music and future releases.
           </div>
           <div class="update-date">January 2026</div>
         </li>
 
         <!--
-          Continue adding items here.
-          This page can hold up to 50 update-item blocks.
+          Add up to 50 .update-item blocks on this page.
+          Oldest updates go at the bottom.
         -->
 
       </ul>
 
       <nav class="updates-pagination">
 
-        <!-- When I add more pages:
-             /updates/page-2.html
-             /updates/page-3.html
-        -->
-
         <a class="page-link disabled" href="#">← Newer</a>
+
         <a class="page-link current" href="/updates/">1</a>
         <a class="page-link" href="/updates/page-2.html">2</a>
         <a class="page-link" href="/updates/page-3.html">3</a>
+
         <a class="page-link" href="/updates/page-2.html">Older →</a>
 
       </nav>
