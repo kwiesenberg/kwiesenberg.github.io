@@ -252,12 +252,13 @@ body {
   margin: 0;
 }
 
-/* one update = one item */
+/* one update row */
 
 .update-item {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 10px;
+  align-items: start;
   padding: 6px 0;
   border-bottom: 1px solid #e4d7a6;
 }
@@ -266,33 +267,45 @@ body {
   border-bottom: none;
 }
 
+/* body (title + subtitle block) */
+
+.update-body {
+  display: block;
+}
+
+/* header line (title + date) */
+
+.update-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+}
+
 /* thumbnail */
+
+.update-thumb-link {
+  display: inline-block;
+}
 
 .update-thumb {
   width: 32px;
   height: 32px;
   object-fit: cover;
   border: 1px solid #c9b27c;
-  background: #fff;
 }
 
-/* clickable thumbnail wrapper */
+/* no thumbnail layout */
 
-.update-thumb-link {
-  display: inline-flex;
-  line-height: 0;
+.update-item.no-thumb {
+  grid-template-columns: 1fr;
 }
 
-/* header row (title + date) */
-
-.update-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
+.update-item.no-thumb .update-body {
+  grid-column: 1;
 }
 
-/* bold title */
+/* title */
 
 .update-title {
   font-weight: bold;
@@ -307,29 +320,22 @@ body {
   text-decoration: underline;
 }
 
-/* subtitle / byline */
+/* subtitle */
 
 .update-subtitle {
-  grid-column: 2;
   font-size: 0.9rem;
   line-height: 1.4;
   margin-top: 2px;
   color: #333;
 }
 
-/* date */
+/* date (now beside title) */
 
 .update-date {
   font-size: 0.8rem;
   font-style: italic;
   color: #777;
   white-space: nowrap;
-}
-
-/* make header align in grid */
-
-.update-header {
-  grid-column: 2;
 }
 
 /* link to full updates page (homepage only) */
