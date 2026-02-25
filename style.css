@@ -230,7 +230,7 @@ body {
   text-align: right;
 }
 
-/* ---------- updates box (homepage) ---------- */
+/* ---------- updates (homepage + updates page) ---------- */
 
 .updates {
   border: 1px solid #c9b27c;
@@ -296,7 +296,7 @@ body {
   margin-top: 2px;
 }
 
-/* link to full updates page */
+/* link to full updates page (homepage only) */
 
 .updates-archive-link {
   display: inline-block;
@@ -309,6 +309,41 @@ body {
 .updates-archive-link:hover {
   text-decoration: underline;
 }
+
+/* ---------- pagination (updates page only) ---------- */
+
+.updates-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.page-link {
+  border: 1px solid #c9b27c;
+  background: #fff1b8;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.85rem;
+}
+
+.page-link:hover {
+  background: #ffed9c;
+}
+
+.page-link.current {
+  background: #ffe48a;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.page-link.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 
 /* ---------- sidebar (blog pages) ---------- */
 
