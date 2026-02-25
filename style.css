@@ -252,15 +252,37 @@ body {
   margin: 0;
 }
 
-/* one update = one item */
+/* one update row */
 
 .update-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
   padding: 6px 0;
   border-bottom: 1px solid #e4d7a6;
 }
 
 .update-item:last-child {
   border-bottom: none;
+}
+
+/* thumbnail */
+
+.update-thumb {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border: 1px solid #c9b27c;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+/* text column */
+
+.update-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 /* bold title */
@@ -278,12 +300,11 @@ body {
   text-decoration: underline;
 }
 
-/* subtitle / byline */
+/* subtitle */
 
 .update-subtitle {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin-top: 2px;
   color: #333;
 }
 
@@ -293,7 +314,6 @@ body {
   font-size: 0.8rem;
   font-style: italic;
   color: #777;
-  margin-top: 2px;
 }
 
 /* link to full updates page (homepage only) */
@@ -343,7 +363,6 @@ body {
   opacity: 0.5;
   pointer-events: none;
 }
-
 
 /* ---------- sidebar (blog pages) ---------- */
 
