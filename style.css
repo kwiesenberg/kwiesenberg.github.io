@@ -777,3 +777,48 @@ main h2 {
 .music-card[open] .music-panel {
   margin-top: 0;
 }
+
+/* ---------- about page ---------- */
+
+.about-page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-page-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.about-entry {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+
+  border: 1px solid #c9b27c;
+  background: #fffdf0;
+  padding: 12px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border: 1px solid #c9b27c;
+  background: #fffdf0;
+  padding: 4px;
+}
+
+.about-info p {
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .about-entry {
+    grid-template-columns: 1fr;
+  }
+}
