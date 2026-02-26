@@ -796,8 +796,6 @@ main h2 {
   grid-template-columns: 220px 1fr;
   gap: 16px;
 
-  align-items: center;
-
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 12px;
@@ -811,6 +809,10 @@ main h2 {
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 4px;
+}
+
+.about-info {
+  align-self: center;
 }
 
 .about-info p {
