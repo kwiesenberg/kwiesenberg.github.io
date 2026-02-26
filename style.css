@@ -189,6 +189,7 @@ body {
   padding: 10px;
   align-self: flex-start;
   width: 100%;
+  flex: 0 0 auto;
 }
 
 .latest-post-wrapper h2 {
