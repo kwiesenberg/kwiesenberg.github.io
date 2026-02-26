@@ -80,6 +80,10 @@ body {
   gap: 16px;
 }
 
+.home-right > * {
+  flex: 0 0 auto;
+}
+
 /* ---------- homepage image ---------- */
 
 .home-image img {
@@ -187,10 +191,7 @@ body {
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 10px;
-  align-self: flex-start;
   width: 100%;
-  flex: 0 0 auto;
-  height: fit-content;
 }
 
 .latest-post-wrapper h2 {
