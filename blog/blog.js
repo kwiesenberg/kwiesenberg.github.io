@@ -17,6 +17,7 @@ fetch("/blog/posts.json")
 function render() {
   const grid = document.getElementById("post-grid");
   if (!grid) return;
+
   grid.innerHTML = "";
 
   const start = (currentPage - 1) * POSTS_PER_PAGE;
@@ -28,48 +29,41 @@ function render() {
     card.href = `/blog/${post.slug}/`;
 
     card.innerHTML = `
-      <img src="${post.image}" alt="">
+      <img src="${post.image}" alt="${post.title}">
       <h3>${post.title}</h3>
     `;
 
     grid.appendChild(card);
   });
 
-const pageInfo = document.getElementById("page-info");
-const prevBtn = document.getElementById("prev-page");
-const nextBtn = document.getElementById("next-page");
+  const pageInfo = document.getElementById("page-info");
+  const prevBtn = document.getElementById("prev-page");
+  const nextBtn = document.getElementById("next-page");
 
-const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
-if (pageInfo) {
-  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-}
+  if (pageInfo) {
+    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  }
 
-if (prevBtn && nextBtn) {
-  prevBtn.disabled = currentPage === 1;
-  nextBtn.disabled = currentPage === totalPages;
-}
+  if (prevBtn && nextBtn) {
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
 
-const prevBtn = document.getElementById("prev-page");
-const nextBtn = document.getElementById("next-page");
+    prevBtn.onclick = () => {
+      if (currentPage > 1) {
+        currentPage--;
+        render();
+      }
+    };
 
-if (prevBtn && nextBtn) {
-
-  prevBtn.onclick = () => {
-    if (currentPage > 1) {
-      currentPage--;
-      render();
-    }
-  };
-
-  nextBtn.onclick = () => {
-    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
-    if (currentPage < totalPages) {
-      currentPage++;
-      render();
-    }
-  };
-
+    nextBtn.onclick = () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        render();
+      }
+    };
+  }
 }
 
 function buildFeatured() {
