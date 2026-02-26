@@ -12,7 +12,7 @@ fetch("/blog/posts.json")
     if (!container) return;
 
     container.innerHTML = `
-      <a href="/blog/${latest.slug}/" class="post-card latest-post-box">
+      <a href="/blog/${latest.slug}/" class="latest-post-box">
 
         <img src="${latest.image}" alt="${latest.title}">
 
