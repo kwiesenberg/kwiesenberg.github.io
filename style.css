@@ -80,10 +80,6 @@ body {
   gap: 16px;
 }
 
-.home-right > * {
-  flex: 0 0 auto;
-}
-
 /* ---------- homepage image ---------- */
 
 .home-image img {
