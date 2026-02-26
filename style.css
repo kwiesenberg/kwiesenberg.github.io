@@ -201,9 +201,6 @@ body {
   gap: 6px;
   text-decoration: none;
   color: inherit;
-}
-
-.latest-post-box.post-card {
   aspect-ratio: auto;
 }
 
