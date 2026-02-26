@@ -187,6 +187,7 @@ body {
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 10px;
+  align-self: start;
 }
 
 .latest-post-wrapper h2 {
