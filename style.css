@@ -199,10 +199,15 @@ body {
   padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   text-decoration: none;
   color: inherit;
   aspect-ratio: auto;
+}
+
+.latest-post-box h3 {
+  margin: 0;
+  text-align: center;
 }
 
 .latest-post-box img {
@@ -211,7 +216,6 @@ body {
   max-height: 200px;
   object-fit: cover;
   display: block;
-  height: auto;
 }
 
 .latest-excerpt {
