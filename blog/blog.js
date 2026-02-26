@@ -35,29 +35,42 @@ function render() {
     grid.appendChild(card);
   });
 
-  const pageInfo = document.getElementById("page-info");
-  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+const pageInfo = document.getElementById("page-info");
+const prevBtn = document.getElementById("prev-page");
+const nextBtn = document.getElementById("next-page");
 
+const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+if (pageInfo) {
   pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-
-  document.getElementById("prev-page").disabled = currentPage === 1;
-  document.getElementById("next-page").disabled = currentPage === totalPages;
 }
 
-document.getElementById("prev-page").onclick = () => {
-  if (currentPage > 1) {
-    currentPage--;
-    render();
-  }
-};
+if (prevBtn && nextBtn) {
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+}
 
-document.getElementById("next-page").onclick = () => {
-  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
-  if (currentPage < totalPages) {
-    currentPage++;
-    render();
-  }
-};
+const prevBtn = document.getElementById("prev-page");
+const nextBtn = document.getElementById("next-page");
+
+if (prevBtn && nextBtn) {
+
+  prevBtn.onclick = () => {
+    if (currentPage > 1) {
+      currentPage--;
+      render();
+    }
+  };
+
+  nextBtn.onclick = () => {
+    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+    if (currentPage < totalPages) {
+      currentPage++;
+      render();
+    }
+  };
+
+}
 
 function buildFeatured() {
   const ul = document.getElementById("featured-list");
