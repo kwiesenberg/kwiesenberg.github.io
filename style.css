@@ -187,7 +187,8 @@ body {
   border: 1px solid #c9b27c;
   background: #fffdf0;
   padding: 10px;
-  align-self: start;
+  align-self: flex-start;
+  width: 100%;
 }
 
 .latest-post-wrapper h2 {
