@@ -14,7 +14,7 @@ fetch("/blog/posts.json")
     container.innerHTML = `
       <a href="/blog/${latest.slug}/" class="post-card latest-post-box">
 
-        <img src="${latest.image}" alt="">
+        <img src="${latest.image}" alt="${latest.title}">
 
         <h3>${latest.title}</h3>
 
