@@ -192,7 +192,7 @@ body {
 
 .latest-post-wrapper h2 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .latest-post-box {
@@ -206,7 +206,8 @@ body {
 }
 
 .latest-post-box h3 {
-  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
   text-align: center;
 }
 
